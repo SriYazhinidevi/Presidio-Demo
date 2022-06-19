@@ -1,0 +1,7 @@
+{
+  "name": "Presidio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
