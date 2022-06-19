@@ -1,7 +1,15 @@
 {
   "name": "Presidio",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "enterprise": {
+      "keyId": 7721,
+      "productKey": "key_d741463176d04955942cbca86d87da7f",
+      "appId": "5646978d",
+      "registries": [
+        "@ionic-enterprise;https://registry.ionicframework.com/"
+      ]
+    }
   },
   "type": "angular"
 }
