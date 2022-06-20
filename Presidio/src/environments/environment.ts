@@ -37,11 +37,11 @@ export const azureNativeConfig : IonicAuthOptions = {
   // OpenID configuration
   discoveryUrl: 'https://presidiodemo.b2clogin.com/presidiodemo.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_new-signin-signup-userflow',
   // the URI to redirect to after log in
-  redirectUri: 'io.ionic.starter://login',
+  redirectUri: 'io.ionic.presidio.demo://login',
   // requested scopes from provider
   scope: 'openid offline_access email profile https://presidiodemo.onmicrosoft.com/presidiodemo/user_impersonation',
   // the URL to redirect to after log out
-  logoutUrl: 'io.ionic.starter://login',
+  logoutUrl: 'io.ionic.presidio.demo://login',
   // The type of iOS webview to use. 'shared' will use a webview that can share session/cookies
   // on iOS to provide SSO across multiple apps but will cause a prompt for the user which asks them
   // to confirm they want to share site data with the app. 'private' uses a webview which will not

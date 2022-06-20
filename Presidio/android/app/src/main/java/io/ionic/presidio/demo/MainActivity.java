@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package io.ionic.presidio.demo;
 
 import com.getcapacitor.BridgeActivity;
 

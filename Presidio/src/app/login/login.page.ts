@@ -33,7 +33,7 @@ export class LoginPage implements OnInit {
     try {
       await this.authService.login();
     } catch (e) {
-      console.log(`caught error ${e.message}`);
+      console.log(`caught error as ${e.message}`);
     } finally {
       loadingIndicator.dismiss();
     }
