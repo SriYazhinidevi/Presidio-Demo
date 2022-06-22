@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
+import { environment } from 'src/environments/environment';
 import { AuthenticationService } from '../services/authentication.service';
-
+//import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
+//import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { Browser } from '@capacitor/browser';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -45,6 +48,11 @@ export class LoginPage implements OnInit {
     });
     await loadingIndicator.present();
     return loadingIndicator;
+  }
+  async navigateToDashboard(): Promise<void> {
+   // await Browser.open({ url: environment.loginURL });
+    //this.iab.create(environment.loginURL);
+     window.location.assign(environment.loginURL);
   }
 
 

@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { TokenResolverService } from './resolver/token-resolver.service';
 import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canActivate: [AuthGuard]
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    resolve: {
+      access: TokenResolverService
+    }
   },
   {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'callback',
+    redirectTo: 'home',
   },
   {
     path: 'login',

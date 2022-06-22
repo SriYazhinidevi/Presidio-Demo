@@ -13,5 +13,9 @@
     <param name="android-package" value="com.ionicframework.auth.ionicauthconnectstorage.IonicAuthConnectStorage"/>
   </feature>
 
+  <feature name="InAppBrowser">
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
+  </feature>
+
   
 </widget>

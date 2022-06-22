@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { IonicAuth } from '@ionic-enterprise/auth';
 import { Subject, Observable } from 'rxjs';
@@ -14,7 +14,7 @@ export class AuthenticationService extends IonicAuth{
     return this._loginStatusChanged.asObservable();
   }
   
-  constructor(platform: Platform) {
+  constructor(platform: Platform, private ngZone: NgZone) {
     // Determine whether to run on mobile or the web
     const selectedConfig = platform.is('hybrid') ? azureNativeConfig : azureWebConfig;
     super(selectedConfig);
@@ -32,14 +32,14 @@ export class AuthenticationService extends IonicAuth{
       console.log('login error:', + err);
       const message: string = err.message;
       // This is the error code returned by the Azure AD servers on failure.
-      if (message !== undefined && message.startsWith('AADB2C90118')) {
-        // The address you pass back is the custom user flow (policy) endpoint
-        await super.login(
-          'https://presidiodemo.b2clogin.com/presidiodemo.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_password-reset'
-        );
-      } else {
-        throw new Error(err.error);
-      }
+      // if (message !== undefined && message.startsWith('AADB2C90118')) {
+      //   // The address you pass back is the custom user flow (policy) endpoint
+      //   await super.login(
+      //     'https://presidiodemo.b2clogin.com/presidiodemo.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_password-reset'
+      //   );
+      // } else {
+      //   throw new Error(err.error);
+      // }
     }
   }
   
@@ -47,9 +47,7 @@ export class AuthenticationService extends IonicAuth{
     // Web only: Using "current window" sign-in, 
     this._loginStatusChanged.next(true);
   }
-  // isAuthenticated(): Observable<boolean> {
-  //     return this._loginStatusChanged.asObservable();
-  // }
+  
   onLogout() {
     this._loginStatusChanged.next(false);
   }
