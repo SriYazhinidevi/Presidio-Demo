@@ -9,12 +9,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthGuard } from './services/auth.guard';
 import { AuthenticationService } from './services/authentication.service';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { Storage } from '@ionic/storage';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpClientModule],
-  providers: [AuthGuard, AuthenticationService,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [AuthGuard, AuthenticationService,Storage,StatusBar,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

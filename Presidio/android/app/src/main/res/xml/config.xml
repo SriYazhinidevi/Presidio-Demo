@@ -13,8 +13,18 @@
     <param name="android-package" value="com.ionicframework.auth.ionicauthconnectstorage.IonicAuthConnectStorage"/>
   </feature>
 
+  <feature name="NativePageTransitions">
+    <param name="android-package" value="com.telerik.plugins.nativepagetransitions.NativePageTransitions"/>
+    <param name="onload" value="true"/>
+  </feature>
+
   <feature name="InAppBrowser">
     <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser"/>
+  </feature>
+
+  <feature name="StatusBar">
+    <param name="android-package" value="org.apache.cordova.statusbar.StatusBar"/>
+    <param name="onload" value="true"/>
   </feature>
 
   

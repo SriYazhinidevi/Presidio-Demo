@@ -108,14 +108,19 @@ export const environment = {
   production: false,
   sso_api_username: '2jjnoj7qqq0ddeqadh7660ui48',
   sso_api_pwd: '1irotfgd6kv0skhnt9tclqvckln0q3lk92101tt8dpc0b9q1ulvi',
-
+  GRANT_TYPE_AUTH : 'authorization_code',
+  GRANT_TYPE_REFRESH : 'refresh_token',
   loginURL: 'https://io-ionic-presidio-demo.auth.us-east-1.amazoncognito.com/login?client_id=2jjnoj7qqq0ddeqadh7660ui48&response_type=code&scope=aws.cognito.signin.user.admin+email+openid&redirect_uri=http://localhost:8100/callback',
 
   redirectURL: 'http://localhost:8100/callback',
 
   cognitoTokenURL: 'https://io-ionic-presidio-demo.auth.us-east-1.amazoncognito.com/oauth2/token',
 
-  logout: 'https://io-ionic-presidio-demo.auth.us-east-1.amazoncognito.com/logout?client_id=2jjnoj7qqq0ddeqadh7660ui48&response_type=code&scope=aws.cognito.signin.user.admin+email+openid&redirect_uri=http://localhost:8100/login'
+  logout: 'https://io-ionic-presidio-demo.auth.us-east-1.amazoncognito.com/logout?client_id=2jjnoj7qqq0ddeqadh7660ui48&response_type=code&scope=aws.cognito.signin.user.admin+email+openid&redirect_uri=http://localhost:8100/login',
+  SCOPE : 'aws.cognito.signin.user.admin+email+openid'
+  //'https://io-ionic-presidio-demo.auth.us-east-1.amazoncognito.com/logout?response_type=code&client_id=2jjnoj7qqq0ddeqadh7660ui48&redirect_uri=http://localhost:8100/login&state=STATE&scope=aws.cognito.signin.user.admin+email+openid' 
+  //'http://localhost:8100/login'
+  // 'https://io-ionic-presidio-demo.auth.us-east-1.amazoncognito.com/logout?client_id=2jjnoj7qqq0ddeqadh7660ui48&response_type=code&scope=aws.cognito.signin.user.admin+email+openid&redirect_uri=http://localhost:8100/login'
 };
 
 /*

@@ -14,13 +14,8 @@
   </ion-header>
 
   <div class="ion-padding">
-    <div align="center" *ngIf="user">
-     
-
-      <p>{{ user.firstName}} {{ user.lastName }}</p> 
-      <p>{{ user.email }}</p>
-    </div>
-
+    <p>{{token}}Hello</p>
+ <p>{{tokenDetails}}</p>
     <ion-button expand="block" (click)="logout();" style="margin-top: 50px">Log out</ion-button>
   </div>
 </ion-content>
